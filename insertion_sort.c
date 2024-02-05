@@ -2,7 +2,7 @@
 
 void main()
 {
-    int a[]={1,6,5,4};
+    int a[]={6,3,5,6,3,2,1,9};
     int n=sizeof(a)/sizeof(a[0]);
     for (int i=1;i<n;i++)
     {
