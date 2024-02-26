@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-int count=0;
 void swap(char *x, char *y)
 {
     char temp = *x;
@@ -18,12 +17,13 @@ int is_duplicate(char *str, int start, int current)
     }
     return 0; // No duplicate found
 }
-void generate_permutations(char *str, int start, int end) {
+void generate_permutations(char *str, int start, int end)
+{
     if (start == end)
-        {
+    {
         printf("%s\n", str);
-        count = count+1;
-    } else {
+    } else
+    {
         for (int i = start; i <= end; i++)
         {
             if (!is_duplicate(str, start, i))
@@ -44,9 +44,22 @@ void string_permutations(char *input_string)
 
 int main()
 {
-    char input_str[] = "rrdd";
+    int r=0,c=0;
+    printf("Enter the number of rows:");
+    scanf("%d",&r);
+    printf("Enter the number of columns:");
+    scanf("%d",&c);
+    char input_str[100] = "";
+    for (int i=0;i<r;i++)
+    {
+        input_str[i]='D';
+    }
+    for (int j=0;j<c;j++)
+    {
+        input_str[r+j]='R';
+    }
+    printf("The number of possibilities are :\n");
     string_permutations(input_str);
-    printf("The number of permutations are %d",count);
 
     return 0;
 }
